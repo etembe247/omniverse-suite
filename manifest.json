@@ -1,0 +1,16 @@
+{
+  "name": "Omniverse AI Suite",
+  "short_name": "Omniverse",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#4F46E5",
+  "description": "Installable local web application bundle containing 10 high-value optimization utility creative applications.",
+  "icons": [
+    {
+      "src": "app_logo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

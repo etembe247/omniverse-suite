@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- MANDATORY SEO TAGS FOR GOOGLE INDEXING -->
+    <title>Omniverse AI Suite - 100% Free Offline Local AI Tools</title>
+    <meta name="description" content="Access free background removers, passport photo makers, assignment rewriters, and resume builders instantly. Runs completely offline in your browser.">
+    <meta name="keywords" content="free assignment rewriter, local cv builder, offline code explainer, privacy first ad generator, browser text tutor">
+    <link rel="canonical" href="https://yourcustomdomain.com">
+
+    <!-- CORRECTED AND CLEANED MOBILE APP PWA & FAVICON FLAGS -->
+    <meta name="theme-color" content="#4F46E5">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="icon" type="image/png" href="app_logo.png">
+    <link rel="shortcut icon" type="image/png" href="app_logo.png">
+    <link rel="apple-touch-icon" href="/app_logo.png">
+    <link rel="manifest" href="/manifest.json">
+
+    <!-- Tailwind CSS Script Wrapper via UNPKG CDN -->
+    <script src="https://unpkg.com"></script>
+</head>
+<body class="bg-slate-50 text-slate-900 min-h-screen p-4 md:p-8">
+
+    <!-- CRAWLER VISIBILITY HEADERS (SEO Engine) -->
+    <header class="max-w-6xl mx-auto text-center mb-8 mt-4">
+        <h1 class="text-4xl font-black text-indigo-600 sm:text-5xl">Omniverse Free AI Suite</h1>
+        <p class="mt-2 text-slate-600 max-w-2xl mx-auto">10 high-impact utilities running completely on your device with no servers, no tracking, and no subscription costs.</p>
+    </header>
+
+    <!-- CORE INTERFACE MATRIX -->
+    <main class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-8 bg-white p-6 rounded-2xl shadow-xl border border-slate-100">
+        
+        <!-- SIDEBAR APPLIANCE NAVIGATOR -->
+        <div class="space-y-2 border-r border-slate-150 pr-0 lg:pr-6">
+            <h3 class="font-bold text-xs uppercase tracking-wider text-slate-400 mb-4">Select Application Tool</h3>
+            <button id="btn-text" onclick="switchTab('text-suite')" class="tab-btn w-full text-left p-3 rounded-xl font-medium bg-indigo-50 text-indigo-600 transition cursor-pointer">📄 Writing & Learning Suite</button>
+            <button id="btn-media" onclick="switchTab('media-suite')" class="tab-btn w-full text-left p-3 rounded-xl font-medium text-slate-600 hover:bg-slate-100 transition cursor-pointer">🎨 MediaForge & Passport</button>
+            <button id="btn-pdf" onclick="switchTab('pdf-suite')" class="tab-btn w-full text-left p-3 rounded-xl font-medium text-slate-600 hover:bg-slate-100 transition cursor-pointer">📚 PDF Tutor & Quiz Desk</button>
+            <button id="btn-audio" onclick="switchTab('audio-suite')" class="tab-btn w-full text-left p-3 rounded-xl font-medium text-slate-600 hover:bg-slate-100 transition cursor-pointer">🎙️ Voice & Audio Studio</button>
+        </div>
+
+        <!-- ACTIVE SYSTEM SLOTS -->
+        <div class="lg:col-span-2 space-y-6">
+            
+            <!-- TOOL PANEL 1: GENERAL WRITING & PARAPHRASING -->
+            <div id="text-suite" class="tool-panel space-y-4">
+                <h2 class="text-xl font-bold text-slate-800">📄 Writing & Learning Engine</h2>
+                <label for="textTask" class="block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-2">Application Tool Profile</label>
+                <select id="textTask" class="w-full p-3 border border-slate-200 rounded-xl mb-4 bg-slate-50 font-medium focus:outline-indigo-600 transition">
+                    <option value="rewrite">📝 Assignment Rewriter & Paraphraser</option>
+                    <option value="cv">💼 CV & Cover Letter Writer</option>
+                    <option value="ad">📣 Caption & Ad Social Generator</option>
+                    <option value="code">💻 Step-by-Step Code Explainer</option>
+                </select>
+                <textarea id="textInput" rows="6" class="w-full p-3 border rounded-xl text-sm shadow-inner" placeholder="Paste your essay, resume details, or code blocks here..."></textarea>
+                <button onclick="runTextAI()" class="w-full bg-indigo-600 text-white font-bold py-3 rounded-xl hover:bg-indigo-700 transition cursor-pointer shadow-md shadow-indigo-100">Execute Text AI</button>
+            </div>
+
+            <!-- TOOL PANEL 2: MEDIAFORGE BACKGROUND REFRAMING -->
+            <div id="media-suite" class="tool-panel hidden space-y-4">
+                <h2 class="text-xl font-bold text-slate-800">🎨 MediaForge & Passport Matrix</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <label for="imageUpload" class="block text-xs font-bold text-slate-400 mb-1">Upload Source Photo</label>
+                        <input type="file" id="imageUpload" accept="image/*" class="w-full p-2 border rounded-xl text-sm bg-slate-50">
+                    </div>
+                    <div>
+                        <label for="mediaMode" class="block text-xs font-bold text-slate-400 mb-1">Canvas Profile Target</label>
+                        <select id="mediaMode" class="w-full p-2 border rounded-xl text-sm bg-slate-50">
+                            <option value="photofit">Smart E-Commerce Photofit (Square Grid)</option>
+                            <option value="passport-white">Passport Photo Maker (White Backdrop)</option>
+                            <option value="passport-blue">Passport Photo Maker (Blue Backdrop)</option>
+                        </select>
+                    </div>
+                </div>
+                <button onclick="processLocalImage()" class="w-full bg-indigo-600 text-white font-bold py-3 rounded-xl hover:bg-indigo-700 transition cursor-pointer shadow-md shadow-indigo-100">Process Image Canvas</button>
+                <div class="mt-4 flex justify-center">
+                    <canvas id="imageCanvas" class="max-w-full border rounded-xl bg-slate-100 hidden shadow-md"></canvas>
+                </div>
+            </div>
+
+            <!-- TOOL PANEL 3: ACADEMIC TEXT PROCESSING -->
+            <div id="pdf-suite" class="tool-panel hidden space-y-4">
+                <h2 class="text-xl font-bold text-slate-800">📚 PDF Tutor & Quiz Desk</h2>
+                <label for="pdfUpload" class="block text-xs font-bold text-slate-400 mb-1">Upload Study Document</label>
+                <input type="file" id="pdfUpload" accept=".txt,.pdf" class="w-full p-3 border rounded-xl text-sm bg-slate-50">
+                <label for="pdfMode" class="block text-xs font-bold text-slate-400 mb-1 mt-2">Select Analysis Mode</label>
+                <select id="pdfMode" class="w-full p-3 border rounded-xl bg-slate-50">
+                    <option value="tutor">🧠 Scan Context & Act as Homework Tutor</option>
+                    <option value="quiz">🎯 Extract Concepts & Generate Practice Quiz</option>
+                </select>
+                <textarea id="pdfQuestion" rows="2" class="w-full p-3 border rounded-xl text-sm shadow-inner mt-2" placeholder="Ask your textbook data a question (If Tutor mode selected)..."></textarea>
+                <button onclick="runPdfAI()" class="w-full bg-indigo-600 text-white font-bold py-3 rounded-xl hover:bg-indigo-700 transition cursor-pointer shadow-md shadow-indigo-100">Query Document</button>
+            </div>
+
+            <!-- TOOL PANEL 4: CLIENT SIDE AUDIO MATRIX -->
+            <div id="audio-suite" class="tool-panel hidden space-y-4">
+                <h2 class="text-xl font-bold text-slate-800">🎙️ Voice & Audio Studio</h2>
+                <div class="border border-slate-200 p-4 rounded-xl space-y-3 bg-slate-50">
+                    <h4 class="font-bold text-sm text-slate-700">🔊 Text to Audio Engine</h4>
+                    <textarea id="ttsInput" rows="2" class="w-full p-3 border rounded-xl bg-white text-sm shadow-inner" placeholder="Type text here to convert into vocal spoken audio output..."></textarea>
+                    <button onclick="runLocalTTS()" class="bg-indigo-600 text-white font-medium px-4 py-2 rounded-lg text-xs hover:bg-indigo-700 transition cursor-pointer">Speak Text Out Loud</button>
+                </div>
+                <div class="border border-slate-200 p-4 rounded-xl space-y-3 bg-slate-50">
+                    <h4 class="font-bold text-sm text-slate-700">📝 Voice Note Transcript Summarizer</h4>
+                    <textarea id="transcriptInput" rows="3" class="w-full p-3 border rounded-xl bg-white text-sm shadow-inner" placeholder="Paste speech transcript text logs here to compress into key summary points..."></textarea>
+                    <button onclick="runTranscriptSummary()" class="bg-indigo-600 text-white font-medium px-4 py-2 rounded-lg text-xs hover:bg-indigo-700 transition cursor-pointer">Summarize Voice Transcript</button>
+                </div>
+            </div>
+
+            <!-- REAL TIME HARDWARE MONITOR OUTPUT WINDOW -->
+            <div class="p-5 bg-slate-900 text-slate-100 rounded-xl font-mono text-sm shadow-inner min-h-[140px]">
+                <div class="border-b border-slate-800 pb-2 mb-2 text-indigo-400 font-bold uppercase tracking-wider text-xs">💻 System Monitor Console</div>
+                <div id="consoleWindow" class="whitespace-pre-wrap text-slate-300 text-xs leading-relaxed">System status: Ready. Select a target suite module from the left menu panel.</div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- PROOF MODULE IMPORT MAP AND CORE LAYER TO SOLVE CORB IN LIVE SERVER -->
+    <script type="importmap">
+    {
+        "imports": {
+            "@xenova/transformers": "https://jsdelivr.net"
+        }
+    }
+    </script>
